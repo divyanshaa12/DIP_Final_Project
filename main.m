@@ -87,7 +87,7 @@ LPFimg5_out1 = uint8(LPF(img5));
 
 %%
 %Plots
-figure(1)
+figure('Name','AD Filter Image1')
 subplot(3,2,1:2)
 imshow(img)
 title('Original')
@@ -109,7 +109,7 @@ imshow(ADimg_out4)
 title('Option 4')
 
 %%
-figure(2)
+figure('Name','AD Filter Image2')
 subplot(3,2,1:2)
 imshow(img1)
 title('Original')
@@ -131,7 +131,29 @@ imshow(ADimg1_out4)
 title('Option 4')
 
 %%
-figure(3)
+figure('Name','AD Filter Image3')
+subplot(3,2,1:2)
+imshow(img2)
+title('Original')
+
+subplot(3,2,3)
+imshow(ADimg2_out1)
+title('Option 1')
+
+subplot(3,2,4)
+imshow(ADimg2_out2)
+title('Option 2')
+
+subplot(3,2,5)
+imshow(ADimg2_out3)
+title('Option 3')
+
+subplot(3,2,6)
+imshow(ADimg2_out4)
+title('Option 4')
+
+%%
+figure('Name','AD Filter Image4')
 subplot(3,2,1:2)
 imshow(img3)
 title('Original')
@@ -153,7 +175,7 @@ imshow(ADimg3_out4)
 title('Option 4')
 
 %%
-figure(4)
+figure('Name','AD Filter Image5')
 subplot(3,2,1:2)
 imshow(img4)
 title('Original')
@@ -175,7 +197,7 @@ imshow(ADimg4_out4)
 title('Option 4')
 
 %%
-figure(5)
+figure('Name','AD Filter Image6')
 subplot(3,2,1:2)
 imshow(img5)
 title('Original')
@@ -195,3 +217,189 @@ title('Option 3')
 subplot(3,2,6)
 imshow(ADimg5_out4)
 title('Option 4')
+
+%%
+figure('Name','Median Filter')
+subplot(3,2,1)
+imshow(MDimg_out1)
+title('Original')
+
+subplot(3,2,2)
+imshow(MDimg1_out1)
+title('Image 1')
+
+subplot(3,2,3)
+imshow(MDimg2_out1)
+title('Image 2')
+
+subplot(3,2,4)
+imshow(MDimg3_out1)
+title('Image 3')
+
+subplot(3,2,5)
+imshow(MDimg4_out1)
+title('Image 4')
+
+subplot(3,2,6)
+imshow(MDimg5_out1)
+title('Image 5')
+
+%%
+figure('Name','Moving Average Filter')
+subplot(3,2,1)
+imshow(MAimg_out1)
+title('Original')
+
+subplot(3,2,2)
+imshow(MAimg1_out1)
+title('Image 1')
+
+subplot(3,2,3)
+imshow(MAimg2_out1)
+title('Image 2')
+
+subplot(3,2,4)
+imshow(MAimg3_out1)
+title('Image 3')
+
+subplot(3,2,5)
+imshow(MAimg4_out1)
+title('Image 4')
+
+subplot(3,2,6)
+imshow(MAimg5_out1)
+title('Image 5')
+
+%%
+figure('Name','LPF Filter')
+subplot(3,2,1)
+imshow(LPFimg_out1)
+title('Original')
+
+subplot(3,2,2)
+imshow(LPFimg1_out1)
+title('Image 1')
+
+subplot(3,2,3)
+imshow(LPFimg2_out1)
+title('Image 2')
+
+subplot(3,2,4)
+imshow(LPFimg3_out1)
+title('Image 3')
+
+subplot(3,2,5)
+imshow(LPFimg4_out1)
+title('Image 4')
+
+subplot(3,2,6)
+imshow(LPFimg5_out1)
+title('Image 5')
+
+%%
+figure('Name','Image 1 Comparison')
+subplot(2,2,1)
+imshow(ADimg_out2)
+title('AD Filter')
+
+subplot(2,2,2)
+imshow(MAimg_out1)
+title('MA Filter')
+
+subplot(2,2,3)
+imshow(MDimg_out1)
+title('MD Filter')
+
+subplot(2,2,4)
+imshow(LPFimg_out1)
+title('LPF Filter')
+
+%%
+figure('Name','Image 2 Comparison')
+subplot(2,2,1)
+imshow(ADimg1_out2)
+title('AD Filter')
+
+subplot(2,2,2)
+imshow(MAimg1_out1)
+title('MA Filter')
+
+subplot(2,2,3)
+imshow(MDimg1_out1)
+title('MD Filter')
+
+subplot(2,2,4)
+imshow(LPFimg1_out1)
+title('LPF Filter')
+
+%%
+figure('Name','Image 3 Comparison')
+subplot(2,2,1)
+imshow(ADimg2_out2)
+title('AD Filter')
+
+subplot(2,2,2)
+imshow(MAimg2_out1)
+title('MA Filter')
+
+subplot(2,2,3)
+imshow(MDimg2_out1)
+title('MD Filter')
+
+subplot(2,2,4)
+imshow(LPFimg2_out1)
+title('LPF Filter')
+
+%%
+figure('Name','Image 4 Comparison')
+subplot(2,2,1)
+imshow(ADimg3_out2)
+title('AD Filter')
+
+subplot(2,2,2)
+imshow(MAimg3_out1)
+title('MA Filter')
+
+subplot(2,2,3)
+imshow(MDimg3_out1)
+title('MD Filter')
+
+subplot(2,2,4)
+imshow(LPFimg3_out1)
+title('LPF Filter')
+
+%%
+figure('Name','Image 5 Comparison')
+subplot(2,2,1)
+imshow(ADimg4_out2)
+title('AD Filter')
+
+subplot(2,2,2)
+imshow(MAimg4_out1)
+title('MA Filter')
+
+subplot(2,2,3)
+imshow(MDimg4_out1)
+title('MD Filter')
+
+subplot(2,2,4)
+imshow(LPFimg4_out1)
+title('LPF Filter')
+
+%%
+figure('Name','Image 6 Comparison')
+subplot(2,2,1)
+imshow(ADimg5_out2)
+title('AD Filter')
+
+subplot(2,2,2)
+imshow(MAimg5_out1)
+title('MA Filter')
+
+subplot(2,2,3)
+imshow(MDimg5_out1)
+title('MD Filter')
+
+subplot(2,2,4)
+imshow(LPFimg5_out1)
+title('LPF Filter')
