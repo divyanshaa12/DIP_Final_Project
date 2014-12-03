@@ -1,0 +1,11 @@
+http://www.codecogs.com/latex/eqneditor.php
+
+\frac{\partial }{\partial t}I(\vec{r},t) = \triangledown . (c(\vec{r},t)\triangledown.(I(\vec{r},t)) )
+
+c(\vec{r},t) = f(\left | \triangledown I(\vec{r},t) \right |)
+
+c_{1}(\vec{r},t) = exp\left ( -\left ( \frac{\left | \triangledown \left I(\vec{r},t) \right |}{K} \right)^{2} \right )  \right ) 
+
+c_{2}(\vec{r},t) = \frac{1}{1 + \left ( \frac{\left | \triangledown \left I(\vec{r},t) \right |}{K} \right)^{2} \right )} 
+
+
