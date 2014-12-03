@@ -13,6 +13,7 @@ img5=rgb2gray(imread('spine.tif'));
 %Adding Noise
 M=0;
 V=0.02;
+noise = imnoise(zeros(1024,1024),'gaussian',M,V);
 img = imnoise(img,'gaussian',M,V);
 img1 = imnoise(img1,'gaussian',M,V);
 img2 = imnoise(img2,'gaussian',M,V);
@@ -78,13 +79,218 @@ MAimg5_out1 = uint8(moving_avg(img5));
 %%
 %Moving Average filter
 
-LPFimg_out1 = uint8(LPF(img,50));
+LPFimg_out1 = uint8(LPF(img));
 LPFimg1_out1 = uint8(LPF(img1));
 LPFimg2_out1 = uint8(LPF(img2));
 LPFimg3_out1 = uint8(LPF(img3));
 LPFimg4_out1 = uint8(LPF(img4));
 LPFimg5_out1 = uint8(LPF(img5));
 
+%%
+%SNR Calculations
+snr_ADimg_out1 = psnr(ADimg_out1,uint8(imnoise(zeros(size(ADimg_out1)),'gaussian',M,V)));
+snr_ADimg_out2 = psnr(ADimg_out2,uint8(imnoise(zeros(size(ADimg_out2)),'gaussian',M,V)));
+snr_ADimg_out3 = psnr(ADimg_out3,uint8(imnoise(zeros(size(ADimg_out3)),'gaussian',M,V)));
+snr_ADimg_out4 = psnr(ADimg_out4,uint8(imnoise(zeros(size(ADimg_out4)),'gaussian',M,V)));
+
+snr_ADimg1_out1 = psnr(ADimg1_out1,uint8(imnoise(zeros(size(ADimg1_out1)),'gaussian',M,V)));
+snr_ADimg1_out2 = psnr(ADimg1_out2,uint8(imnoise(zeros(size(ADimg1_out2)),'gaussian',M,V)));
+snr_ADimg1_out3 = psnr(ADimg1_out3,uint8(imnoise(zeros(size(ADimg1_out3)),'gaussian',M,V)));
+snr_ADimg1_out4 = psnr(ADimg1_out4,uint8(imnoise(zeros(size(ADimg1_out4)),'gaussian',M,V)));
+
+snr_ADimg2_out1 = psnr(ADimg2_out1,uint8(imnoise(zeros(size(ADimg2_out1)),'gaussian',M,V)));
+snr_ADimg2_out2 = psnr(ADimg2_out2,uint8(imnoise(zeros(size(ADimg2_out2)),'gaussian',M,V)));
+snr_ADimg2_out3 = psnr(ADimg2_out3,uint8(imnoise(zeros(size(ADimg2_out3)),'gaussian',M,V)));
+snr_ADimg2_out4 = psnr(ADimg2_out4,uint8(imnoise(zeros(size(ADimg2_out4)),'gaussian',M,V)));
+
+snr_ADimg3_out1 = psnr(ADimg3_out1,uint8(imnoise(zeros(size(ADimg3_out1)),'gaussian',M,V)));
+snr_ADimg3_out2 = psnr(ADimg3_out2,uint8(imnoise(zeros(size(ADimg3_out2)),'gaussian',M,V)));
+snr_ADimg3_out3 = psnr(ADimg3_out3,uint8(imnoise(zeros(size(ADimg3_out3)),'gaussian',M,V)));
+snr_ADimg3_out4 = psnr(ADimg3_out4,uint8(imnoise(zeros(size(ADimg3_out4)),'gaussian',M,V)));
+
+snr_ADimg4_out1 = psnr(ADimg4_out1,uint8(imnoise(zeros(size(ADimg4_out1)),'gaussian',M,V)));
+snr_ADimg4_out2 = psnr(ADimg4_out2,uint8(imnoise(zeros(size(ADimg4_out2)),'gaussian',M,V)));
+snr_ADimg4_out3 = psnr(ADimg4_out3,uint8(imnoise(zeros(size(ADimg4_out3)),'gaussian',M,V)));
+snr_ADimg4_out4 = psnr(ADimg4_out4,uint8(imnoise(zeros(size(ADimg4_out4)),'gaussian',M,V)));
+
+snr_ADimg5_out1 = psnr(ADimg5_out1,uint8(imnoise(zeros(size(ADimg5_out1)),'gaussian',M,V)));
+snr_ADimg5_out2 = psnr(ADimg5_out2,uint8(imnoise(zeros(size(ADimg5_out2)),'gaussian',M,V)));
+snr_ADimg5_out3 = psnr(ADimg5_out3,uint8(imnoise(zeros(size(ADimg5_out3)),'gaussian',M,V)));
+snr_ADimg5_out4 = psnr(ADimg5_out4,uint8(imnoise(zeros(size(ADimg5_out4)),'gaussian',M,V)));
+
+snr_MDimg_out1 = psnr(MDimg_out1,uint8(imnoise(zeros(size(MDimg_out1)),'gaussian',M,V)));
+snr_MDimg1_out1 = psnr(MDimg1_out1,uint8(imnoise(zeros(size(MDimg1_out1)),'gaussian',M,V)));
+snr_MDimg2_out1 = psnr(MDimg2_out1,uint8(imnoise(zeros(size(MDimg2_out1)),'gaussian',M,V)));
+snr_MDimg3_out1 = psnr(MDimg3_out1,uint8(imnoise(zeros(size(MDimg3_out1)),'gaussian',M,V)));
+snr_MDimg4_out1 = psnr(MDimg4_out1,uint8(imnoise(zeros(size(MDimg4_out1)),'gaussian',M,V)));
+snr_MDimg5_out1 = psnr(MDimg5_out1,uint8(imnoise(zeros(size(MDimg5_out1)),'gaussian',M,V)));
+
+snr_MAimg_out1 = psnr(MAimg_out1,uint8(imnoise(zeros(size(MAimg_out1)),'gaussian',M,V)));
+snr_MAimg1_out1 = psnr(MAimg1_out1,uint8(imnoise(zeros(size(MAimg1_out1)),'gaussian',M,V)));
+snr_MAimg2_out1 = psnr(MAimg2_out1,uint8(imnoise(zeros(size(MAimg2_out1)),'gaussian',M,V)));
+snr_MAimg3_out1 = psnr(MAimg3_out1,uint8(imnoise(zeros(size(MAimg3_out1)),'gaussian',M,V)));
+snr_MAimg4_out1 = psnr(MAimg4_out1,uint8(imnoise(zeros(size(MAimg4_out1)),'gaussian',M,V)));
+snr_MAimg5_out1 = psnr(MAimg5_out1,uint8(imnoise(zeros(size(MAimg5_out1)),'gaussian',M,V)));
+
+snr_LPFimg_out1 = psnr(LPFimg_out1,uint8(imnoise(zeros(size(LPFimg_out1)),'gaussian',M,V)));
+snr_LPFimg1_out1 = psnr(LPFimg1_out1,uint8(imnoise(zeros(size(LPFimg1_out1)),'gaussian',M,V)));
+snr_LPFimg2_out1 = psnr(LPFimg2_out1,uint8(imnoise(zeros(size(LPFimg2_out1)),'gaussian',M,V)));
+snr_LPFimg3_out1 = psnr(LPFimg3_out1,uint8(imnoise(zeros(size(LPFimg3_out1)),'gaussian',M,V)));
+snr_LPFimg4_out1 = psnr(LPFimg4_out1,uint8(imnoise(zeros(size(LPFimg4_out1)),'gaussian',M,V)));
+snr_LPFimg5_out1 = psnr(LPFimg5_out1,uint8(imnoise(zeros(size(LPFimg5_out1)),'gaussian',M,V)));
+
+f = figure('Name','SNR Table','Position',[200 200 600 200]);
+dat = [snr_ADimg_out1,snr_ADimg_out2,snr_MAimg_out1,snr_MDimg_out1,snr_LPFimg_out1;
+       snr_ADimg1_out1,snr_ADimg1_out2,snr_MAimg1_out1,snr_MDimg1_out1,snr_LPFimg1_out1;
+       snr_ADimg2_out1,snr_ADimg2_out2,snr_MAimg2_out1,snr_MDimg2_out1,snr_LPFimg2_out1;
+       snr_ADimg3_out1,snr_ADimg3_out2,snr_MAimg3_out1,snr_MDimg3_out1,snr_LPFimg3_out1;
+       snr_ADimg4_out1,snr_ADimg4_out2,snr_MAimg4_out1,snr_MDimg4_out1,snr_LPFimg4_out1;
+       snr_ADimg5_out1,snr_ADimg5_out2,snr_MAimg5_out1,snr_MDimg5_out1,snr_LPFimg5_out1;
+       ]; 
+cnames = {'AD Filter(Option 1)','AD Filter(Option 2)','MA Filter','MD Filter','LPF Filter'};
+rnames = {'Image 1','Image 2','Image 3','Image 4','Image 5','Image 6'};
+t = uitable('Parent',f,'Data',dat,'ColumnName',cnames,'RowName',rnames,'Position',[20 20 560 180]);
+
+%%
+%Plots
+figure('Name','AD Filter Image1')
+subplot(3,2,1:2)
+imshow(img)
+title('Original')
+
+subplot(3,2,3)
+imshow(ADimg_out1)
+title('Option 1')
+
+subplot(3,2,4)
+imshow(ADimg_out2)
+title('Option 2')
+
+subplot(3,2,5)
+imshow(ADimg_out3)
+title('Option 3')
+
+subplot(3,2,6)
+imshow(ADimg_out4)
+title('Option 4')
+
+%%
+figure('Name','AD Filter Image2')
+subplot(3,2,1:2)
+imshow(img1)
+title('Original')
+
+subplot(3,2,3)
+imshow(ADimg1_out1)
+title('Option 1')
+
+subplot(3,2,4)
+imshow(ADimg1_out2)
+title('Option 2')
+
+subplot(3,2,5)
+imshow(ADimg1_out3)
+title('Option 3')
+
+subplot(3,2,6)
+imshow(ADimg1_out4)
+title('Option 4')
+
+%%
+figure('Name','AD Filter Image3')
+subplot(3,2,1:2)
+imshow(img2)
+title('Original')
+
+subplot(3,2,3)
+imshow(ADimg2_out1)
+title('Option 1')
+
+subplot(3,2,4)
+imshow(ADimg2_out2)
+title('Option 2')
+
+subplot(3,2,5)
+imshow(ADimg2_out3)
+title('Option 3')
+
+subplot(3,2,6)
+imshow(ADimg2_out4)
+title('Option 4')
+
+%%
+figure('Name','AD Filter Image4')
+subplot(3,2,1:2)
+%%
+%Plots
+figure('Name','AD Filter Image1')
+subplot(3,2,1:2)
+imshow(img)
+title('Original')
+
+subplot(3,2,3)
+imshow(ADimg_out1)
+title('Option 1')
+
+subplot(3,2,4)
+imshow(ADimg_out2)
+title('Option 2')
+
+subplot(3,2,5)
+imshow(ADimg_out3)
+title('Option 3')
+
+subplot(3,2,6)
+imshow(ADimg_out4)
+title('Option 4')
+
+%%
+figure('Name','AD Filter Image2')
+subplot(3,2,1:2)
+imshow(img1)
+title('Original')
+
+subplot(3,2,3)
+imshow(ADimg1_out1)
+title('Option 1')
+
+subplot(3,2,4)
+imshow(ADimg1_out2)
+title('Option 2')
+
+subplot(3,2,5)
+imshow(ADimg1_out3)
+title('Option 3')
+
+subplot(3,2,6)
+imshow(ADimg1_out4)
+title('Option 4')
+
+%%
+figure('Name','AD Filter Image3')
+subplot(3,2,1:2)
+imshow(img2)
+title('Original')
+
+subplot(3,2,3)
+imshow(ADimg2_out1)
+title('Option 1')
+
+subplot(3,2,4)
+imshow(ADimg2_out2)
+title('Option 2')
+
+subplot(3,2,5)
+imshow(ADimg2_out3)
+title('Option 3')
+
+subplot(3,2,6)
+imshow(ADimg2_out4)
+title('Option 4')
+
+%%
+figure('Name','AD Filter Image4')
+subplot(3,2,1:2)
 %%
 %Plots
 figure('Name','AD Filter Image1')
